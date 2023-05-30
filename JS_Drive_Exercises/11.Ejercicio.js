@@ -28,12 +28,8 @@ const splitArrayIntoChunks = (arr, num) => {
       return null;
     }
   };
-  
   const result = splitArrayIntoChunks([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 5);
   console.log(result); // Output the result: [ [ 1, 2 ], [ 3, 4 ], [ 5, 6 ], [ 7, 8 ], [ 9, 10, 11, 12 ] ]
-  
-
 // const result = splitArrayIntoChunks([1, 2, 3, 4, 5, 6, 7,8,9,10,11], 5);
-
 const result = splitArrayIntoChunks([1, 2, 3, 4, 5, 6, 7], 3);
 console.log(result); // [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7 ] ]

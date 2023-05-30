@@ -1,0 +1,25 @@
+// La expresión regular phoneRegex comprueba lo siguiente:
+
+// ^(1\s?)?: Un número opcional de código de país "1" seguido de un espacio opcional.
+// (\(\d{3}\)|\d{3}): Tres dígitos entre paréntesis o tres dígitos sin paréntesis para el código de área.
+// [-\s]?: Un guion o un espacio opcional.
+// (\d{3}): Tres dígitos para el prefijo del número de teléfono.
+// [-\s]?: Un guion o un espacio opcional.
+// (\d{4}): Cuatro dígitos para el sufijo del número de teléfono.
+// $: Coincide con el final de la cadena.
+// La función test() de la expresión regular se utiliza para verificar si la cadena cumple con el patrón definido. Si la cadena coincide con el patrón, se devuelve true; de lo contrario, se devuelve false.
+function telephoneCheck(str) {
+  // Expresión regular para validar el número de teléfono
+  var phoneRegex = /^(1\s?)?(\(\d{3}\)|\d{3})[-\s]?(\d{3})[-\s]?(\d{4})$/;
+
+  return phoneRegex.test(str);
+}
+
+console.log(telephoneCheck("555-555-5555")); // true
+console.log(telephoneCheck("(555)555-5555")); // true
+console.log(telephoneCheck("(555) 555-5555")); // true
+console.log(telephoneCheck("555 555 5555")); // true
+console.log(telephoneCheck("5555555555")); // true
+console.log(telephoneCheck("1 555 555 5555")); // true
+console.log(telephoneCheck("800-692-7753")); // true
+console.log(telephoneCheck("8oo-six427676;laskdjf")); // false

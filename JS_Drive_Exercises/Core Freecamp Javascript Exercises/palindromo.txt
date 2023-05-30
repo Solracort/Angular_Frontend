@@ -1,0 +1,13 @@
+function palindrome(str) {
+  str = str.toLowerCase();
+  str = str.replace(/[^a-zA-Z0-9]/g, '');
+  let array = str.split('');
+  let i=0;
+  while (i<=Math.floor(array.length/2)){
+    if(array[i] !=array[array.length-1-i]) return false;
+    else i++;
+  };
+  console.log(array);
+  return true;
+};
+palindrome("MAMA.");
