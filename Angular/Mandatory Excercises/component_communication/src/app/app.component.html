@@ -1,0 +1,28 @@
+<div class="fullContent m-3 border border-primary">
+    <div class="parentheader m-3 ">
+        <h2>PARENT</h2>
+    </div>
+    <div class="message text-center">
+        <p>message : {{parentMessage}}</p>
+        
+    </div>
+
+    <div class="parentContent  d-flex m-5">
+        
+        <div class="service m-auto">
+            <button (click)="onClickServiceParentButton()" class="serv btn btn-primary m-2">Use Service</button>
+        </div>
+        <div class="inputProp m-auto">
+            <button (click)="changeInputMessage()" class="prop btn btn-primary">Use Input Property</button>
+        </div>
+        <div (click)=" onClickObservableParentButton()" class="observable m-auto">
+            <button class="obs btn btn-primary">Use Observable</button>
+        </div>
+        
+    </div>
+    <div class="son border border-primary m-2">
+        <app-mychild    [message2Child]="inputMessage" (message2Parent)="onChildEvent($event)"></app-mychild>
+    </div>
+   
+</div>
+

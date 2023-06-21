@@ -1,0 +1,15 @@
+.small-flag {
+    width: 50px;
+}
+@media screen and (max-width: 767px) {
+    /* Aquí puedes añadir tus estilos para dispositivos móviles */
+    .general {
+        display:block;
+        align-items: center;
+    }
+    .busqueda, .lateral, .contenido, app-sidebar {
+        margin-bottom: 2%;
+        width:100%;
+    }
+  }
+  
