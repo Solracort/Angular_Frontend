@@ -21,6 +21,7 @@ export class AppComponent {
       console.log('Mensaje recibido en el padre:', message);
     });
   }
+  
 
   changeInputMessage(){
     this.inputMessage = 'PARENT USING INPUT PROPERTY';
@@ -29,11 +30,13 @@ export class AppComponent {
     this.parentMessage = dataChild;
   }
   onClickServiceParentButton() {
-    this.inputMessage = this.userService.childServiceMessage;
+    this.inputMessage = this.userService.parentServiceMessage;
   }
   onClickObservableParentButton(){
     this.userService.sendMessageParent("Parent Using Subject");
    
   }
-  
+  ngOnDestroy(){
+    this.userService.getChildObs$().complete();
+  }
 }

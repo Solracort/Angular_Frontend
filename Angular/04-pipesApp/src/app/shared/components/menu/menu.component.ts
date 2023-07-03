@@ -29,6 +29,7 @@ export class MenuComponent implements OnInit {
             icon : 'pi pi-dollar',
             routerLink:'numbers'
           },
+          
           {
             label: 'No comunes', 
             icon : 'pi pi-globe',
@@ -41,8 +42,9 @@ export class MenuComponent implements OnInit {
           icon: 'pi pi-cog',
           items: [
             {
-              label: 'Otro elemento',
-              icon: 'pi pi-cog'
+              label: 'Custom Pipes',
+              icon: 'pi pi-cog',
+              routerLink:'custom'
             }
           ]
       }

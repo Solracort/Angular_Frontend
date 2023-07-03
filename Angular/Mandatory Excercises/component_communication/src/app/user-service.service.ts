@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Observable, BehaviorSubject, Subject} from 'rxjs'
+import { BehaviorSubject} from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +9,8 @@ export class UserServiceService {
   childServiceMessage  : string = "CHILD USING SERVICE";
   parentServiceMessage : string = "PARENT USING SERVICE";
   
-  private parentObs$: Subject<string> = new Subject();
-  private childObs$:  Subject<string> = new Subject();
+  private parentObs$: BehaviorSubject<string> = new BehaviorSubject('');
+  private childObs$:  BehaviorSubject<string> = new BehaviorSubject('');
 
   getParentObs$() {
     return this.parentObs$;
@@ -20,7 +20,7 @@ export class UserServiceService {
   }
   sendMessageParent(message:string) {
     this.parentObs$.next(message);
-    this.parentObs$.complete(); 
+    
   }
   sendMessageChild(message:string) {
     this.childObs$.next(message);

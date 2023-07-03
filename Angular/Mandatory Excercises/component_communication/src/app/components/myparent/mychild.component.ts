@@ -7,14 +7,18 @@ import { UserServiceService } from 'src/app/user-service.service';
 })
 
 export class MychildComponent implements OnChanges {
+  
+  //We declare de the variables to show the messages
   childMessage : string  = "";
   
-  @Input() message2Child: string ="";
+  //We define the input and output variables for communication between the components 
+  @Input()  message2Child: string ="";
   @Output() message2Parent: EventEmitter<string> = new EventEmitter<string>();
   
-  
+  //We need to inject the service to use the methods 
   constructor(private userService: UserServiceService){}
   
+  //the first thing is to get subscribe OnInit to the observable message value 
   ngOnInit() {
     this.userService.getParentObs$().subscribe((message: string) => {
       this.childMessage = message;
@@ -36,5 +40,8 @@ export class MychildComponent implements OnChanges {
   }
   onClickObservableChildButton(){
     this.userService.sendMessageChild("Child Using Subject");
+  }
+  ngOnDestroy(){
+    this.userService.getChildObs$().complete()
   }
 }
