@@ -1,4 +1,4 @@
 export const environments = {
-    baseUrl: 'https://myHugoHeroes.com'
+    baseUrl: 'http://localhost:3000'
 
 }

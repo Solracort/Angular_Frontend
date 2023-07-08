@@ -25,16 +25,18 @@ export class AppComponent {
 
   changeInputMessage(){
     this.inputMessage = 'PARENT USING INPUT PROPERTY';
+    console.log('usando la propiedad input', this.inputMessage)
+
   }
   onChildEvent(dataChild:string){
     this.parentMessage = dataChild;
+    this.inputMessage='';
   }
   onClickServiceParentButton() {
-    this.inputMessage = this.userService.parentServiceMessage;
+    this.inputMessage = this.userService.parentServiceMessage
   }
   onClickObservableParentButton(){
     this.userService.sendMessageParent("Parent Using Subject");
-   
   }
   ngOnDestroy(){
     this.userService.getChildObs$().complete();

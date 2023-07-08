@@ -12,11 +12,11 @@ export class MychildComponent implements OnChanges {
   childMessage : string  = "";
   
   //We define the input and output variables for communication between the components 
-  @Input()  message2Child: string ="";
+  @Input()  message2Child!: string;
   @Output() message2Parent: EventEmitter<string> = new EventEmitter<string>();
   
   //We need to inject the service to use the methods 
-  constructor(private userService: UserServiceService){}
+  constructor(public userService: UserServiceService){}
   
   //the first thing is to get subscribe OnInit to the observable message value 
   ngOnInit() {
@@ -26,11 +26,12 @@ export class MychildComponent implements OnChanges {
     });
   }
   
-
+  // method to control the changes in the Input variable 
   ngOnChanges(changes:SimpleChanges){
-    if (changes['message2Child'] ){
-        this.childMessage = this.message2Child; 
-    }  
+    // if (changes['message2Child'] ){
+    //     this.childMessage = this.message2Child;
+    //     this.message2Child='' ;
+    // }  
   }
   sendChildMessage(){
     this.message2Parent.emit('CHILD USING OUTPUT EVENT');

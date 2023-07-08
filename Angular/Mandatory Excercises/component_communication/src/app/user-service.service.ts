@@ -20,7 +20,6 @@ export class UserServiceService {
   }
   sendMessageParent(message:string) {
     this.parentObs$.next(message);
-    
   }
   sendMessageChild(message:string) {
     this.childObs$.next(message);
