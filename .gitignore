@@ -1,4 +1,7 @@
+
 ssh*
+*.env
+*environments.ts
 
 # Compiled output
 /dist

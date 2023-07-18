@@ -1,13 +1,13 @@
-export interface MyRecord {
-    id:          string;
-    name:        string;
-    mail:        string;
-    suscription: boolean;
-    country:     countries;
-    city:        string;    
-}
 
-export enum countries {
+export interface MyTableHeadElements {
+    id:number;
+    name: string;
+    email: string;
+    confirmation: boolean;
+    country: Countries;
+    city: string; 
+}
+export enum Countries {
     
     Alemania     = "Alemania",
     Austria      = "Austria",
