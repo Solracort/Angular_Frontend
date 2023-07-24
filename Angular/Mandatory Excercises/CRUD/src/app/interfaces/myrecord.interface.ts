@@ -3,6 +3,8 @@ export interface MyTableHeadElements {
     id:number;
     name: string;
     email: string;
+    password: string;
+    password2: string;
     confirmation: boolean;
     country: Countries;
     city: string; 
