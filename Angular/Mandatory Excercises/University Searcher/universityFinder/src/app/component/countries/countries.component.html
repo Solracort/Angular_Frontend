@@ -1,0 +1,67 @@
+<div class="row">
+    <h1>Buscador de Universidades</h1>
+    <!-- <div class="col-1"></div> -->
+    <div class="col d-flex align-items-center m-1">
+        <ul class="list-group list-group-horizontal">
+            <li routerLink="/spain" 
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}"
+            class="list-group-item">España</li>
+            <li 
+            routerLink="/united_kingdom" 
+            routerLinkActive="active"
+            class="list-group-item">Reino Unido</li>
+            <li 
+            routerLink="/portugal"
+            routerLinkActive="active"
+            class="list-group-item">Portugal</li>
+        </ul>
+        
+            <div class="col-6 mx-1">
+                <form (ngSubmit)="buscar(termino)">
+                    <input type="text" 
+                    autocomplete="off" 
+                    class="form-control ms-1 mt-2" 
+                    [(ngModel)]="termino"
+                    (input)="teclaPresionada()"
+                    name="termino" 
+                    />
+                </form>
+            </div>
+    </div>
+        
+        
+    <div class="row mt-1">
+    
+        <div class="col ms-1">
+            --Lista de posibles universidades--
+
+            <ul *ngIf="showSuggested"
+            class="list-group">
+                <li *ngFor="let uni of suggestedUniversities"
+                    class="list-group-item list-group-item-action">
+                    <a  class="nav-link"
+                        [routerLink]=""
+                        >
+                        {{uni.id}}
+                    </a>  
+                </li>
+                <li class="list-group-item list-group-item-action"
+                    (click)="buscarSugerido(termino)"
+                >
+                    <a  class="nav-link">
+                        Buscar: "{{termino}}"
+                    </a>  
+                </li>
+            </ul>
+
+            <hr>
+            <div *ngIf="isError"
+                class="alert alert-danger">
+                No se encontró nada con el término: {{termino}}
+            </div>
+        </div>
+</div>
+
+    
+</div> 
