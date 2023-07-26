@@ -6,9 +6,9 @@ import { LayoutComponent } from './pages/layout/layout.component';
 
 const routes: Routes = [
   {path:':countryName', component: LayoutComponent},
-  {path:'spain', component: LayoutComponent, pathMatch:'full'},
-  {path: 'united_kingdom',   component: LayoutComponent},
-  {path: 'portugal', component: LayoutComponent},
+  // {path:'spain', component: LayoutComponent, pathMatch:'full'},
+  // {path: 'united_kingdom',   component: LayoutComponent},
+  // {path: 'portugal', component: LayoutComponent},
   {path: '**', redirectTo:'spain'},
 ];
 

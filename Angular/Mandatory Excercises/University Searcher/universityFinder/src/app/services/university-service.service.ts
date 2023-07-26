@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
 import { uniFields } from '../interfaces/uniFields.interface';
-import { Observable } from 'rxjs';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, filter, map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UniversityServiceService {
 
-  apiUrl: string = 'localhost:4200'
+  apiUrl: string = 'localhost:3000'
 
   constructor(private http: HttpClient) { }
 
-  buscarUniversidad(termino:string):Observable<uniFields[]> {
-    const url : string = `${this.apiUrl}/universities/${termino}`;
-       
-    return this.http.get<uniFields[]>(url);
+  buscarUniversidad(termino:string, country:string):Observable<uniFields[]> {
+    
+    const url : string = `${this.apiUrl}/universities`   
+    return this.http.get<uniFields[]>(url)
+      .pipe(
+        
+          map((results) => results.filter((result) => result.country === country))
+      );
+      
 
   }
 }

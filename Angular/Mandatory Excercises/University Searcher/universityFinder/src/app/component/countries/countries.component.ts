@@ -32,22 +32,26 @@ export class CountriesComponent {
 
       
     this.debouncer
-    .pipe(debounceTime(300))
-    .subscribe( valor=>{
+    .pipe(
+      debounceTime(300))
+      .subscribe( valor=>{
       this.suggestions(valor)
     })
   }
+  get country(){return this.country$.value}
+
   buscar(termino:string){
     
     this.isError= false;
     this.showSuggested = false;
-    this.universityService.buscarUniversidad(this.termino)
-      .filter((universities)=>{
+    this.universityService.buscarUniversidad(this.termino, this.country)
+      .subscribe((universities)=>{
         console.log(universities);
         this.universities = universities;
-      }, (err)=>{
-          this.isError=true;
-          this.universities = []
+      // }, 
+      // (err)=>{
+      //     this.isError=true;
+      //     this.universities = []
       })
   }
   suggestions(termino:string){
@@ -55,11 +59,11 @@ export class CountriesComponent {
     this.isError= false;
     this.termino = termino;
     this.showSuggested = true;
-    this.universityService.buscarUniversidad(this.termino)
-      .subscribe((universities)=>{
+    this.universityService.buscarUniversidad(this.termino, this.country)
+      .subscribe(
+        (universities)=>{
         console.log('esto es lo que envio para buscar sugerencias:',this.termino);
-        this.suggestedUniversities=universities.splice(0,5)},
-        (err) => this.suggestedUniversities=[]
+        this.suggestedUniversities=universities.splice(0,5)}
       )    
       console.log("Estas son las universidades de las sugerencias", this.suggestedUniversities)
   }
