@@ -1,20 +1,27 @@
 <div class="row">
     <h1>Buscador de Universidades</h1>
-    <!-- <div class="col-1"></div> -->
+     
+    <!-- Menu horizontal tipo lista routerLink -->
     <div class="col d-flex align-items-center m-1">
         <ul class="list-group list-group-horizontal">
             <li routerLink="/spain" 
             routerLinkActive="active"
             [routerLinkActiveOptions]="{exact: true}"
-            class="list-group-item">España</li>
+            class="list-group-item"
+            (click)="reset()"
+            >España</li>
             <li 
             routerLink="/united_kingdom" 
             routerLinkActive="active"
-            class="list-group-item">Reino Unido</li>
+            class="list-group-item"
+            (click)="reset()"
+            >Reino Unido</li>
             <li 
             routerLink="/portugal"
             routerLinkActive="active"
-            class="list-group-item">Portugal</li>
+            class="list-group-item"
+            (click)="reset()"
+            >Portugal</li>
         </ul>
         
             <div class="col-6 mx-1">
@@ -34,12 +41,14 @@
     <div class="row mt-1">
     
         <div class="col ms-1">
-            --Lista de posibles universidades--
+            
 
             <ul *ngIf="showSuggested"
             class="list-group">
                 <li *ngFor="let uni of suggestedUniversities"
-                    class="list-group-item list-group-item-action">
+                    class="list-group-item list-group-item-action"
+                    (click)="buscarSugerido(uni.id)"
+                    >
                     <a  class="nav-link"
                         [routerLink]=""
                         >
@@ -62,6 +71,12 @@
             </div>
         </div>
 </div>
+<div class='ms-5' *ngIf="chosenUniv.id!=''">
+    <p>ID: {{ chosenUniv.id }}</p>
+    <p>Country: {{ chosenUniv.country }}</p>
+    <p>Sites: {{ chosenUniv.web_pages }}</p>
+    <p>Alpha Code: {{ chosenUniv.alpha_two_code }}</p>
 
-    
+</div>
+        
 </div> 

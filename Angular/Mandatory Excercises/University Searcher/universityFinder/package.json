@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test", 
-    "backend": "json-server --watch data/universities.json"
+    "backend": " json-server --watch data/universities.json --port 3000"
+    
 
   },
   "private": true,
