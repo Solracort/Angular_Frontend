@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-1"></div>
+    <div class="semaforo col-3 ms-2">
+        <div [ngStyle]="{ 'background-color': primeColor === 'rojo' ? 'red' : 'lightslategray', 'box-shadow': primeColor === 'rojo' ? '0 0 20px 10px rgba(255, 0, 0, 0.5)' : 'none' }" class="circle red"></div>
+        <div [ngStyle]="{ 'background-color': primeColor === 'amarillo' ? 'yellow' : 'lightslategray', 'box-shadow': primeColor === 'amarillo' ? '0 0 20px 10px rgba(255, 255, 0, 0.5)' : 'none' }" class="circle yellow"></div>
+        <div [ngStyle]="{ 'background-color': primeColor === 'verde' ? 'green' : 'lightslategray', 'box-shadow': primeColor === 'verde' ? '0 0 20px 10px rgba(0, 255, 0, 0.5)' : 'none' }" class="circle green"></div>
+    </div>
+</div>

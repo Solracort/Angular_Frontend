@@ -1,0 +1,21 @@
+.semaforo{
+    background-color: dimgray;
+    border-radius: 10%;
+    height: 40vh;
+    width: 25vh;
+    margin-bottom:  2%;
+    margin-left: 6%;
+    margin-top:2%;
+}
+.circle{
+    width:10vh;
+    height:10vh;
+    background-color: lightslategray;
+    margin:auto;
+    margin-top:9%;
+    border-radius: 50%;
+}
+.circle.red {
+    background-color: lightslategray;
+    
+  }

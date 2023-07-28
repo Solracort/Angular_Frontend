@@ -1,0 +1,12 @@
+.manage{
+    color:green;
+}
+
+.select-wrapper {
+    margin-right: 10px; /* Espacio entre el select y el div checker */
+  }
+  
+  .checker {
+    display: flex;
+    align-items: center;
+  }

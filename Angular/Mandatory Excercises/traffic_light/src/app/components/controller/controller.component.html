@@ -1,0 +1,18 @@
+
+<div class="manage row w-100">
+    <div class="col-1"></div>
+    <h1><u>Controlador</u></h1>
+    <div class="col-2 d-flex align-items-center">
+      <div class="select-wrapper">
+        <select class="p-1" [(ngModel)]="colorSeleccionado" (change)="selectColor()" >
+          <option [value]="'rojo'">rojo</option>
+          <option [value]="'amarillo'">amarillo</option>
+          <option [value]="'verde'">verde</option>
+        </select>
+      </div>
+      <div class="checker ms-3">
+        <input type="checkbox" id="micheckbox" class="ms-1" (change)="turnOn()" />
+        <label for="micheckbox">Encendido/Apagado</label>
+      </div>
+    </div>
+  </div>
