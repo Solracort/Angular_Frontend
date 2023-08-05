@@ -1,0 +1,44 @@
+.buttons{
+    display:flex;
+    flex-direction: row;
+    
+    width:min-content;
+    margin: 2%;
+    padding: 2%;
+}
+.menu1{
+    padding: 10%;
+    padding-right: 10%;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    white-space: nowrap;
+}
+.menu1:hover{
+    background-color:dodgerblue;
+    cursor: pointer;
+}
+.menu2{
+    display: inline-block;
+    padding: 10%;
+    padding-right: 10%;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    white-space: nowrap; /* Esta propiedad evita que el texto se divida en varias líneas */
+    
+}
+.menu2:hover{
+    background-color:dodgerblue;
+    cursor: pointer;
+}
+.row {
+    margin-bottom: 10px; /* Espacio entre cada conjunto de label e input */
+  }
+  
+  .row label,
+  .row input {
+    display: block; /* Muestra los elementos en bloques individuales */
+  }

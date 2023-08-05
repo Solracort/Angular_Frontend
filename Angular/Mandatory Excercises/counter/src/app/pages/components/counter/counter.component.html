@@ -1,0 +1,42 @@
+
+<h1>{{counter().actualValue}}</h1>
+<div class="row">
+    <h2>Setup</h2>
+    <div class="row buttons">
+        <div class="menu1" (click)="pause()">Start</div>
+        <div class="menu1" (click)="pause()">Pause</div>
+        <div class="menu1" (click)="reset()">Reset</div>
+    </div>
+</div>
+<div class="row">
+    <h2>Count</h2>
+    <div class="row buttons">
+        <div class="menu2">Count Up</div>
+        <div class="menu2">Count Down</div>
+    </div>
+</div>
+<div class="row">
+    <label>Set To </label>
+    
+    <input 
+     #set_to_input 
+     id="set-to-input"
+     type="text" 
+     class="form-control"
+     (input)="onFieldUpdated('setVal', set_to_input.value)"
+     [value]="counter().setVal"
+     />
+</div>
+<div class="row">
+    <label>Step </label>
+    <input 
+    #step_to_input
+    id="step-input" 
+    type="text"
+    class="form-control" 
+    (input)="onFieldUpdated('stepVal', step_to_input.value)"
+    [value]="counter().stepVal"/>
+    <pre>
+        <p>{{counter() | json}} </p>
+    </pre>
+</div>
